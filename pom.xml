@@ -30,6 +30,7 @@
 	<modules>
 
 		<module>gof23</module>
+		<module>common-util-service</module>
 	</modules>
 
 	<dependencyManagement>

@@ -1,4 +1,4 @@
-package com.wzl.gof23;
+package com.wzl.common;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,9 +11,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date: 2021/8/27 23:56
  */
 @SpringBootApplication
-public class Gof23Application {
+public class CommonUtilServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Gof23Application.class, args);
+        SpringApplication.run(CommonUtilServiceApplication.class, args);
     }
 }
