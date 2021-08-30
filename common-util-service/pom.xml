@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>common-util-service</artifactId>
+    <name>common-util-service</name>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
