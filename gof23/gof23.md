@@ -12,4 +12,11 @@ Gof23： Gang of Four (四人帮)
              理解2：两个维度的横向扩展，比如支付方式和支付渠道。一个维度A做实现,一个维度B做抽象接口继承，并将A维度抽象传入B维度内，结合使用。)
             (思考了下，想要用适配器模式来实现桥接的功能。想做两个抽象，会发现非常复杂，不如桥接。适配器更适合，一个方向固定，新增适配器方法，引入适配器)
     适配器模式：(理解1：通常A去适配B,一端方向固定，几乎无扩展,像电脑网线接口B，需要专门适配器A。B需要单独开一个适配的接口，方便进行适配。而桥接是不需要新增的)
-            (理解2：适配器是新增方法去做功能的适配，达到其余类也能使用被适配类的功能。 桥接是不改变原始方法，将两个方向维度搭配成一个全新结构使用。)  
+            (理解2：适配器是新增方法去做功能的适配，达到其余类也能使用被适配类的功能。 桥接是不改变原始方法，将两个方向维度搭配成一个全新结构使用。)
+    代理模式：* 静态代理：主要引入被代理对象，或者继承。重写方法或者新增相同方法添加代理逻辑。(引入对象可以使用set方法，或者构造器，spring和alibaba不建议构造器。)
+            * 动态代理：区分为：cglib 和 javassist 和 jdk三种实现 (1)jdk：基于接口的 (2)cglib:基于类的 (3)javassist:java字节码实现
+            (**JDK**： Proxy.newProxyInstance(ClassLoader, Interface, InvocationHandler),  使用lambda和分类使用
+            Handler类，构造器传入被代理对象，面向接口的。method执行构造传入的对象invoke方法。
+            Proxy代理类: getProxy(Object obj) 传入的为需要代理的对象。 方法内部调用Proxy.newProxyInstance()，业务端调用即可。)
+            (**Cglib**： 步骤一：实现MethodInterceptor,做代理实现MethodProxy.invokeSuper(); 步骤二：Enhancer enhancer.superClass() 和 
+            callBack(代理) 和create()用被代理对象接收.理解为先设置父级被代理类;再设置代理Interceptor，最后创建接收，执行方法。),
