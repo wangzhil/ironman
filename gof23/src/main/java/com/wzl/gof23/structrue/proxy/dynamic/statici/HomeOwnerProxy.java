@@ -1,5 +1,7 @@
 package com.wzl.gof23.structrue.proxy.dynamic.statici;
 
+import com.wzl.gof23.structrue.proxy.dynamic.HomeOwner;
+
 /**
  * 租房代理
  *
