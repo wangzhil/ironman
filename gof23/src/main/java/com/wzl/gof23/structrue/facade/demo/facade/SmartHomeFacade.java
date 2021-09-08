@@ -1,4 +1,8 @@
-package com.wzl.gof23.structrue.facade.demo.impl;
+package com.wzl.gof23.structrue.facade.demo.facade;
+
+import com.wzl.gof23.structrue.facade.demo.impl.AirCondition;
+import com.wzl.gof23.structrue.facade.demo.impl.Light;
+import com.wzl.gof23.structrue.facade.demo.impl.Tv;
 
 /**
  * 智能家居外观模式类

@@ -24,8 +24,8 @@ Gof23： Gang of Four (四人帮)
             Proxy代理类: getProxy(Object obj) 传入的为需要代理的对象。 方法内部调用Proxy.newProxyInstance()，业务端调用即可。)
             (**Cglib**： 步骤一：实现MethodInterceptor,做代理实现MethodProxy.invokeSuper(); 步骤二：Enhancer enhancer.superClass() 和 
             callBack(代理) 和create()用被代理对象接收.理解为先设置父级被代理类;再设置代理Interceptor，最后创建接收，执行方法。),
-    外观模式： 将A、B、C、D到统一到外观类里面，相当于引入全部A、B、C、D变量，然后外观方法初始化变量，接着通过各种实现方法实现各变量功能。
+    外观模式：将A、B、C、D到统一到外观类里面，相当于引入全部A、B、C、D变量，然后外观方法初始化变量，接着通过各种实现方法实现各变量功能。
             缺点：不符合开闭原则，修改麻烦。
             使用场景：类似controller调service；引入各种Dao调用一样，也类似网关。
             源码：tomcat作为web，会将请求信息封装成ServletRequest对象， 还有HttpServletRequest对象。实际是RequestFacade对象，聚合了Request对象。
-            
+            (理解：外观里面封装、聚合其他业务类，门面模式类会自动去调用具体的业务逻辑)
