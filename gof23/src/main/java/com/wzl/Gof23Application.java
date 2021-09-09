@@ -1,4 +1,4 @@
-package com.wzl.gof23;
+package com.wzl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
