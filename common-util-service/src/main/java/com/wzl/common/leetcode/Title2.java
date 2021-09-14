@@ -1,5 +1,7 @@
 package com.wzl.common.leetcode;
 
+import org.apache.commons.lang3.ObjectUtils;
+
 /**
  * 两数相加
  *
@@ -10,7 +12,11 @@ package com.wzl.common.leetcode;
 public class Title2 {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode lr;
 
+        while (ObjectUtils.isNotEmpty(l1.next)) {
+            lr = new ListNode();
+        }
         return l1;
     }
 
