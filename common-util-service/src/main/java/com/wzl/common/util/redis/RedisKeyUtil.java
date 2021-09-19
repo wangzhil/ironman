@@ -23,6 +23,5 @@ public class RedisKeyUtil {
         key.append(KEY_SPLIT_CHAR).append(businessLogic).append(KEY_SPLIT_CHAR).append(businessNo);
         return key.toString();
     }
-
 }
 

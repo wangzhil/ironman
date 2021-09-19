@@ -36,3 +36,5 @@ Gof23： Gang of Four (四人帮)
             (理解：通过区分不同数据，公共部分可以提出公共对象，做封装缓存。)
             (源码使用场景：String、Integer<编译后会发现Integer a = 127; 实际为:Integer.valueOf(127)>、Long<不能设置默认最大值了>、)
             (源码理解链接：https://juejin.cn/post/6844903683860217864#heading-10)
+行为型:
+    策略模式：简单理解策略模式，就是对接口的多种实现，多态。
