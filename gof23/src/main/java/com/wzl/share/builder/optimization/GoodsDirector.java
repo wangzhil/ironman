@@ -1,6 +1,5 @@
 package com.wzl.share.builder.optimization;
 
-import com.alibaba.fastjson.JSONObject;
 import com.wzl.share.builder.Goods;
 
 /**
@@ -13,6 +12,7 @@ import com.wzl.share.builder.Goods;
 public class GoodsDirector extends GoodsBuilder {
 
     private GoodsBuilder goodsBuilder;
+
     public GoodsDirector(GoodsBuilder goodsBuilder) {
         this.goodsBuilder = goodsBuilder;
     }
@@ -35,16 +35,10 @@ public class GoodsDirector extends GoodsBuilder {
         return goodsBuilder.getGoods();
     }
 
-
     public static void main(String[] args) {
-        final GoodsDirector goodsDirector = new GoodsDirector(new GoodsConcreteBuilder());
-        final Goods goods = goodsDirector.generalGoods();
-        System.out.println(JSONObject.toJSONString(goods));
-
-        final Goods goods1 = goodsDirector.electronicGoods();
-        System.out.println(JSONObject.toJSONString(goods1));
-
+        StringBuilder sb = new StringBuilder("a");
+        sb.append("b")
+                .append("c");
     }
-
 
 }

@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 /**
@@ -21,14 +22,16 @@ public class Test {
 
 /*        final Singleton6 instance = Singleton6.getInstance();
         final Singleton6 instance1 = Singleton6.getInstance();
-        System.out.println(instance1 == instance);
+        System.out.println(instance1 == instance);*/
 
         // 反射破坏单例
-        Constructor<Singleton6> constructor = Singleton6.class.getDeclaredConstructor();
+        Constructor<SingletonEnum> constructor = SingletonEnum.class.getDeclaredConstructor();
         constructor.setAccessible(true);
-        final Singleton6 singleton = constructor.newInstance();
-        final Singleton6 singleton1 = constructor.newInstance();
-        System.out.println(singleton1 == singleton);*/
+        final SingletonEnum singleton = constructor.newInstance();
+        final SingletonEnum singleton1 = constructor.newInstance();
+        System.out.println(singleton1 == singleton);
+
+        System.out.println("============ 快乐的分界线 ============");
 
         // 序列化
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempFile"));
@@ -41,6 +44,8 @@ public class Test {
         SingletonEnum newInstance = (SingletonEnum) ois.readObject();
         //判断是否是同一个对象
         System.out.println(newInstance == SingletonEnum.INSTANCE);
+
+        System.out.println("======== 快乐的分界线 =========");
 
         System.out.println(SingletonEnum.INSTANCE == SingletonEnum.INSTANCE);
         SingletonEnum.INSTANCE.doSomething();

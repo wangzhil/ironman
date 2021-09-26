@@ -19,4 +19,5 @@ public enum SingletonEnum {
     void doSomething() {
         System.out.println("我想做点啥，那到底做点啥");
     }
+
 }
