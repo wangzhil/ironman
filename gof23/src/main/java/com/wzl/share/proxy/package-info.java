@@ -7,4 +7,4 @@
  * @version: 1.0.0
  * @date: 2021/9/2 8:59
  */
-package com.wzl.gof23.structrue.proxy.dynamic;
+package com.wzl.share.proxy;

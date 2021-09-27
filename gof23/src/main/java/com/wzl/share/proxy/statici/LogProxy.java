@@ -1,4 +1,4 @@
-package com.wzl.gof23.structrue.proxy.dynamic.statici;
+package com.wzl.share.proxy.statici;
 
 /**
  * 日志代理
@@ -8,6 +8,7 @@ package com.wzl.gof23.structrue.proxy.dynamic.statici;
  * @date: 2021/9/2 9:35
  */
 public class LogProxy implements RentProxy {
+
     private RentProxy rentProxy;
 
     @Override
@@ -40,11 +41,13 @@ public class LogProxy implements RentProxy {
         rentProxy.rent();
     }
 
-    public void setRentProxy(RentProxy rentProxy) {
+    public LogProxy setRentProxy(RentProxy rentProxy) {
         this.rentProxy = rentProxy;
+        return this;
     }
 
     void log() {
         System.out.println("我要在所有方法前加日志.");
     }
+
 }

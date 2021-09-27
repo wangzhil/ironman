@@ -1,13 +1,14 @@
 package com.wzl.share.singleton;
 
+import org.junit.jupiter.api.Test;
+import org.springframework.util.StopWatch;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * 创建对象的方式有哪几种？ clone，new，反射，序列化
@@ -16,11 +17,12 @@ import java.lang.reflect.InvocationTargetException;
  * @version: 1.0.0
  * @date: 2021/9/20 9:27
  */
-public class Test {
+public class SingletonTest {
 
-    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, IOException, ClassNotFoundException {
 
-/*        final Singleton6 instance = Singleton6.getInstance();
+    @Test
+    public void test() throws Exception {
+        /*        final Singleton6 instance = Singleton6.getInstance();
         final Singleton6 instance1 = Singleton6.getInstance();
         System.out.println(instance1 == instance);*/
 
@@ -49,6 +51,36 @@ public class Test {
 
         System.out.println(SingletonEnum.INSTANCE == SingletonEnum.INSTANCE);
         SingletonEnum.INSTANCE.doSomething();
+    }
 
+    @Test
+    public void test1() {
+        int sum = 100000000;
+        StopWatch stopWatch = new StopWatch("单例创建耗时");
+        stopWatch.start();
+        for (int i = 0; i < sum; i++) {
+            // 3002400 ns  2930100 ns  2938600 ns            饿汉式： 3ms
+            // Singleton1 instance = Singleton1.getInstance();
+
+            // 3768200 ns   4098800  3687800                 懒汉式:  3.8ms
+            // Singleton2 instance = Singleton2.getInstance();
+
+            // 1970473300 ns    1966795200 ns  1984560500 ns 方法锁: 1985ms
+            // Singleton3 singleton3 = Singleton3.getInstance();
+
+            // 3603300 ns  3393200 ns  3470400 ns            DC: 3.5ms
+            // Singleton4 singleton4 = Singleton4.getInstance();
+
+            // 20194600 ns  19174400 ns  19022000 ns         DCL : 20ms
+            // Singleton5 singleton5 = Singleton5.getInstance();
+
+            // 3168400 ns  3703600 ns  4103100 ns            静态内部类: 3.5ms
+            // Singleton6 singleton6 = Singleton6.getInstance();
+
+            // 2434400 ns  2270000 ns  1955700 ns            枚举: 2.2ms
+            // SingletonEnum singletonEnum = SingletonEnum.INSTANCE;
+        }
+        stopWatch.stop();
+        System.out.println(stopWatch.shortSummary());
     }
 }

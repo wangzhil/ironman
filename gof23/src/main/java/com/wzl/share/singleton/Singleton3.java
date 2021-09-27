@@ -18,11 +18,11 @@ public class Singleton3 {
 
     public synchronized static Singleton3 getInstance() {
 
-        try {
+/*        try {
             Thread.sleep(200);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         if (instance == null) {
             instance = new Singleton3();
         }

@@ -1,4 +1,4 @@
-package com.wzl.gof23.structrue.proxy.dynamic.cglib;
+package com.wzl.share.proxy.cglib;
 
 /**
  * 房东

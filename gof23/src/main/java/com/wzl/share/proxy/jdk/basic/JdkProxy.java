@@ -1,7 +1,7 @@
-package com.wzl.gof23.structrue.proxy.dynamic.jdk;
+package com.wzl.share.proxy.jdk.basic;
 
-import com.wzl.gof23.structrue.proxy.dynamic.HomeOwner;
-import com.wzl.gof23.structrue.proxy.dynamic.Rent;
+import com.wzl.share.proxy.statici.HomeOwner;
+import com.wzl.share.proxy.statici.Rent;
 
 import java.lang.reflect.Proxy;
 

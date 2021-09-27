@@ -1,6 +1,4 @@
-package com.wzl.gof23.structrue.proxy.dynamic.statici;
-
-import com.wzl.gof23.structrue.proxy.dynamic.HomeOwner;
+package com.wzl.share.proxy.statici;
 
 /**
  * 租房代理
@@ -11,7 +9,7 @@ import com.wzl.gof23.structrue.proxy.dynamic.HomeOwner;
  */
 public class HomeOwnerProxy implements RentProxy {
 
-    private HomeOwner homeOwner;
+    private Rent homeOwner;
 
     @Override
     public void operationA() {

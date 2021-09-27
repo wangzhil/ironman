@@ -16,7 +16,7 @@ import com.wzl.share.strategy.lambda.impl.StudentFilterScore;
  * @version: 1.0.0
  * @date: 2021/9/23 18:16
  */
-public class StrategyTest {
+public class StrategySingletonTest {
 
     public List<Student> list = Arrays.asList(
             new Student("小张", 12, 90),

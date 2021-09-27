@@ -1,4 +1,4 @@
-package com.wzl.gof23.structrue.proxy.dynamic.jdk;
+package com.wzl.share.proxy.jdk.basic;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

@@ -1,4 +1,4 @@
-package com.wzl.gof23.structrue.proxy.dynamic.demo.day01;
+package com.wzl.share.proxy.jdk.upgrade;
 
 import java.lang.reflect.Proxy;
 

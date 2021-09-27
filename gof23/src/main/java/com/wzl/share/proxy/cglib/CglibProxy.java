@@ -1,4 +1,4 @@
-package com.wzl.gof23.structrue.proxy.dynamic.cglib;
+package com.wzl.share.proxy.cglib;
 
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;

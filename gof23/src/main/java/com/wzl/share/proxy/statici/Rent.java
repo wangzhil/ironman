@@ -1,4 +1,4 @@
-package com.wzl.gof23.structrue.proxy.dynamic;
+package com.wzl.share.proxy.statici;
 
 /**
  * 租房
