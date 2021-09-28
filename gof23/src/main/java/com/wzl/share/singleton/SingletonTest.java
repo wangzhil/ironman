@@ -27,10 +27,10 @@ public class SingletonTest {
         System.out.println(instance1 == instance);*/
 
         // 反射破坏单例
-        Constructor<SingletonEnum> constructor = SingletonEnum.class.getDeclaredConstructor();
+        Constructor<Singleton6> constructor = Singleton6.class.getDeclaredConstructor();
         constructor.setAccessible(true);
-        final SingletonEnum singleton = constructor.newInstance();
-        final SingletonEnum singleton1 = constructor.newInstance();
+        final Singleton6 singleton = constructor.newInstance();
+        final Singleton6 singleton1 = constructor.newInstance();
         System.out.println(singleton1 == singleton);
 
         System.out.println("============ 快乐的分界线 ============");
@@ -38,14 +38,13 @@ public class SingletonTest {
         // 序列化
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempFile"));
         // Singleton6
-        oos.writeObject(SingletonEnum.INSTANCE);
+        oos.writeObject(Singleton6.getInstance());
         //Read Obj from file
         File file = new File("tempFile");
         ObjectInputStream ois =  new ObjectInputStream(new FileInputStream(file));
         // Singleton6
-        SingletonEnum newInstance = (SingletonEnum) ois.readObject();
         //判断是否是同一个对象
-        System.out.println(newInstance == SingletonEnum.INSTANCE);
+        System.out.println(Singleton6.getInstance() == ois.readObject());
 
         System.out.println("======== 快乐的分界线 =========");
 

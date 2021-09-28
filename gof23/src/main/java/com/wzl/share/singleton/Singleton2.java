@@ -19,11 +19,11 @@ public class Singleton2 {
     }
 
     public static Singleton2 getInstance() {
-/*        try {
-            Thread.sleep(200);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
+//        try {
+//            Thread.sleep(200);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         if (singleton2 == null) {
             singleton2 = new Singleton2();
         }

@@ -1,5 +1,6 @@
 package com.wzl.share.proxy.cglib;
 
+import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
 
@@ -28,5 +29,20 @@ public class CglibProxy implements MethodInterceptor {
 
     void logAfter() {
         System.out.println("after切面后.............");
+    }
+
+
+    /**
+     * 初始化代理
+     *
+     * @param clazz clazz
+     * @return {@link Object}
+     */
+    public static Object initProxy(Class clazz) {
+        CglibProxy cglibProxy = new CglibProxy();
+        Enhancer enhancer = new Enhancer();
+        enhancer.setSuperclass(clazz);
+        enhancer.setCallback(cglibProxy);
+        return enhancer.create();
     }
 }

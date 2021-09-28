@@ -1,5 +1,5 @@
 /**
- * 动态代理区分为：cglib 和 javassist 和 jdk三种实现
+ * 动态代理区分为： jdk 和 glib 和 javassist三种实现技术
  * jdk：基于接口的
  * cglib:基于类的
  * javassist:java字节码实现

@@ -18,9 +18,9 @@ public class Singleton6 implements Serializable {
     }
 
     private Singleton6() {
-        if (InnerSingleton6.instance != null) {
-            throw new RuntimeException("Singleton not support Constructor");
-        }
+//        if (InnerSingleton6.instance != null) {
+//            throw new RuntimeException("Singleton not support Constructor");
+//        }
     }
 
     public static Singleton6 getInstance() {

@@ -14,7 +14,7 @@ public class Client {
         Composite site = new Composite();
         Component leaf = new Leaf();
         Component leaf1 = new Leaf();
-
+        
         site.add(leaf);
         site.add(leaf1);
         root.add(site);
@@ -24,10 +24,12 @@ public class Client {
     }
 
     public static void showTree(Composite root){
-        for(Component c:root.getChildren()){
-            if(c instanceof Leaf){ //叶子节点
+        for(Component c: root.getChildren()){
+            if(c instanceof Leaf){
+                //叶子节点
                 c.operation();
-            }else{ //树枝节点
+            } else {
+                //树枝节点
                 c.operation();
                 showTree((Composite)c);
             }

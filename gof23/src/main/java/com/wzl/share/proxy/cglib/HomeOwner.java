@@ -10,6 +10,6 @@ package com.wzl.share.proxy.cglib;
 public class HomeOwner {
 
     public void rent() {
-        System.out.println("我是房东，我想要租房!");
+        System.out.println("我是农药战五渣,我需要一个代打!");
     }
 }

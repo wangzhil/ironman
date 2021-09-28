@@ -1,7 +1,5 @@
 package com.wzl.share.proxy.cglib;
 
-import org.springframework.cglib.proxy.Enhancer;
-
 /**
  * CglibTest
  *
@@ -12,12 +10,11 @@ import org.springframework.cglib.proxy.Enhancer;
 public class CglibTest {
 
     public static void main(String[] args) {
-        CglibProxy cglibProxy = new CglibProxy();
-        Enhancer enhancer = new Enhancer();
-        enhancer.setSuperclass(HomeOwner.class);
-        enhancer.setCallback(cglibProxy);
-        HomeOwner homeOwner = (HomeOwner) enhancer.create();
+
+        HomeOwner homeOwner = (HomeOwner) CglibProxy.initProxy(HomeOwner.class);
         homeOwner.rent();
+
+
        /* Class<? extends HomeOwner> baseClass = homeOwner.getClass();
         // 查看增强过的类的父类是不是未增强的Base类
         System.out.println("增强过的类的父类：" + baseClass.getSuperclass().getName());

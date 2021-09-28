@@ -32,7 +32,7 @@ public class StrategySingletonTest {
      */
     @Test
     public void test1() {
-        final List<Student> students = filterAge(filterAge(list));
+        final List<Student> students = filterAge(list);
         students.forEach(System.out::println);
     }
 
@@ -41,7 +41,7 @@ public class StrategySingletonTest {
      */
     @Test
     public void test2() {
-        final List<Student> students = filterScore(filterAge(list));
+        final List<Student> students = filterScore(list);
         students.forEach(System.out::println);
     }
 
@@ -65,12 +65,7 @@ public class StrategySingletonTest {
     @Test
     public void test4() {
 
-        filter(list, new StudentFilter() {
-            @Override
-            public boolean filter(Student student) {
-                return student.getAge() > 20;
-            }
-        });
+        filter(list, student -> student.getAge() > 20);
 
     }
 
@@ -126,8 +121,6 @@ public class StrategySingletonTest {
         }
         return list;
     }
-
-
 
 
     @Test
