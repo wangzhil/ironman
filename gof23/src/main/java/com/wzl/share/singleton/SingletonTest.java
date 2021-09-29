@@ -82,4 +82,25 @@ public class SingletonTest {
         stopWatch.stop();
         System.out.println(stopWatch.shortSummary());
     }
+
+    @Test
+    public void test2() {
+        String s = "hell";
+        String s1 = updateS(s);
+        System.out.println(s);
+
+        Integer i = new Integer(128);
+        updateI(i);
+        System.out.println(i);
+
+
+    }
+
+    private void updateI(Integer i) {
+        i ++;
+    }
+
+    private String updateS(String s) {
+        return s = "hello world !";
+    }
 }
