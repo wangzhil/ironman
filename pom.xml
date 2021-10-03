@@ -31,7 +31,8 @@
 	<modules>
 		<module>gof23</module>
 		<module>common-util-service</module>
-	</modules>
+        <module>algorithm</module>
+    </modules>
 
 	<dependencyManagement>
 		<dependencies>
