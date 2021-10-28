@@ -32,6 +32,7 @@
 		<module>gof23</module>
 		<module>common-util-service</module>
         <module>algorithm</module>
+        <module>custom-study-service</module>
     </modules>
 
 	<dependencyManagement>

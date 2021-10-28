@@ -3,7 +3,9 @@ package com.wzl.common.syn.rollback;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 任务线程池
@@ -28,5 +30,10 @@ public class Boss {
 
     public void rollBack() {
         tasks.forEach(MyTask::rollBack);
+    }
+
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(12, "十二");
     }
 }
