@@ -2,6 +2,7 @@ package com.wzl.study.wang;
 
 import com.wzl.study.spring.WangZhiLeiApplicationContext;
 import com.wzl.study.wang.config.AppConfig;
+import com.wzl.study.wang.config.UserService;
 
 /**
  * @author: wangzhilei
@@ -12,8 +13,8 @@ public class Test {
 
     public static void main(String[] args) {
         WangZhiLeiApplicationContext context = new WangZhiLeiApplicationContext(AppConfig.class);
-        final Object userService = context.getBean("userService");
-        System.out.println(userService);
+        UserService userService = (UserService) context.getBean("userService");
+        userService.test();
 
     }
 }

@@ -1,5 +1,7 @@
 package com.wzl.study.wang.config;
 
+import com.wzl.study.spring.Autowired;
+import com.wzl.study.spring.BeanNameAware;
 import com.wzl.study.spring.Component;
 
 /**
@@ -8,6 +10,21 @@ import com.wzl.study.spring.Component;
  * @date: 2021/10/28 7:57
  */
 @Component(value = "userService")
-public class UserService {
+public class UserService implements BeanNameAware {
+
+    @Autowired(require = "orderService")
+    private OrderService orderService;
+
+    private String beanName;
+
+    @Override
+    public void setBeanName(String name) {
+        this.beanName = name;
+    }
+
+    public void test() {
+        System.out.println(orderService);
+    }
+
 
 }

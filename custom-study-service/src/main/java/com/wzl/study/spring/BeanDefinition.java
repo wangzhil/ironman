@@ -9,15 +9,15 @@ package com.wzl.study.spring;
  */
 public class BeanDefinition {
 
-    private Class clazz;
+    private Class<?> clazz;
 
     private String scope;
 
-    public Class getClazz() {
+    public Class<?> getClazz() {
         return clazz;
     }
 
-    public void setClazz(Class clazz) {
+    public void setClazz(Class<?> clazz) {
         this.clazz = clazz;
     }
 
