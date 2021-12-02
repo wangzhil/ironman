@@ -1,8 +1,5 @@
 package com.wzl.study.test;
 
-import com.wzl.study.newspring.WangZhiLeiContext;
-import com.wzl.study.test.service.AppConfig;
-
 /**
  * @author: wangzhilei
  * @version: 1.0.0
@@ -10,8 +7,5 @@ import com.wzl.study.test.service.AppConfig;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        WangZhiLeiContext context = new WangZhiLeiContext(AppConfig.class);
-        context.get("appService");
-    }
+
 }
