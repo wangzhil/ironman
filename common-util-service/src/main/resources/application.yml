@@ -1,13 +1,19 @@
 server:
-  port: 8824
-  tomcat:
-    # 核心线程数
-    min-spare-threads:
-    # 线程池最大线程数
-    max-threads:
-    # 请求最大连接数
-    max-connections:
-
+    port: 8824
 spring:
-  application:
-    name: common-util-service
+    application:
+        name: common-util-service
+    redis:
+        cluster:
+            max-redirects: 3
+            nodes: xxxxxx
+        database: 14
+        lettuce:
+            pool:
+                max-active: 8
+                max-idle: 5
+                max-wait: 10000ms
+                min-idle: 1
+            shutdown-timeout: 100ms
+        timeout: 3000ms
+        password: qwe123$%^
