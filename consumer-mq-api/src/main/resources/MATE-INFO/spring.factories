@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.bzn.mq.api.common.config.MqConsumerConfig,\
+com.bzn.mq.api.common.config.ConsumerListenerConfig,\
+com.bzn.mq.api.common.config.ConsumerCondition
