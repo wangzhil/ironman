@@ -34,7 +34,8 @@
         <module>algorithm</module>
         <module>custom-study-service</module>
         <module>consumer-mq-api</module>
-    </modules>
+		<module>broker-mq-service</module>
+	</modules>
 
 	<dependencyManagement>
 		<dependencies>

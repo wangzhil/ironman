@@ -1,9 +1,9 @@
 package common.wzl.mq.api.mq.service;
 
-import com.bzn.mq.api.common.constants.MqServiceConstants;
-import com.bzn.mq.api.common.feign.MqServiceFeignConfig;
-import com.bzn.mq.api.mq.domain.request.MqMessageRequest;
-import com.bzn.util.response.ResponseBzn;
+
+import common.wzl.mq.api.common.constants.MqServiceConstants;
+import common.wzl.mq.api.common.feign.MqServiceFeignConfig;
+import common.wzl.mq.api.mq.domain.request.MqMessageRequest;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,6 +33,6 @@ public interface MqProducerService {
      * @param param 请求参数
      * @return 发送结果
      */
-    @PostMapping(BASE_URL_IN+"sendMQMessage")
-    ResponseBzn<String> sendMQMessage(@RequestBody MqMessageRequest param);
+    @PostMapping(BASE_URL_IN + "sendMQMessage")
+    String sendMQMessage(@RequestBody MqMessageRequest param);
 }

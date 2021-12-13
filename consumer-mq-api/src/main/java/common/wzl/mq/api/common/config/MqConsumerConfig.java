@@ -2,10 +2,14 @@ package common.wzl.mq.api.common.config;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.kafka.core.ConsumerFactory;
+import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+
 import javax.annotation.PostConstruct;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -110,8 +114,6 @@ public class MqConsumerConfig {
         configs.put(org.apache.kafka.clients.consumer.ConsumerConfig.GROUP_ID_CONFIG, this.getGroupId());
         configs.put(org.apache.kafka.clients.consumer.ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, this.getEnableAutoCommit());
         configs.put(org.apache.kafka.clients.consumer.ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, this.getAutoCommitInterval());
-//        configs.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, consumerSessionTimeoutMs);
-//        configs.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, consumerMaxPollRecords);
         configs.put(org.apache.kafka.clients.consumer.ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, this.getAutoOffsetReset());
         configs.put(org.apache.kafka.clients.consumer.ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         configs.put(org.apache.kafka.clients.consumer.ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,StringDeserializer.class);

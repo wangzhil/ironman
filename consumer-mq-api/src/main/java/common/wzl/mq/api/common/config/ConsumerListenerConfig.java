@@ -1,6 +1,6 @@
 package common.wzl.mq.api.common.config;
 
-import com.bzn.mq.api.mq.service.MqConsumerService;
+import common.wzl.mq.api.mq.service.MqConsumerService;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
