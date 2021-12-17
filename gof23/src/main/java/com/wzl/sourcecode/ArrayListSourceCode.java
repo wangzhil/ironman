@@ -34,4 +34,39 @@ public class ArrayListSourceCode {
         }
         list.get(10);
     }
+
+
+    private int size;
+
+    private int modCount;
+
+    private Object[] elementNode;
+
+    public ArrayListSourceCode() {
+
+    }
+
+    public boolean add(Object obj) {
+        // 1. 判断是否扩容 如果elementData为空，直接默认10
+        ensureCapacityInternal(size + 1);
+        // 2.
+        this.elementNode[size ++] = obj;
+        return true;
+    }
+
+    private <E> void ensureCapacityInternal(int minCapacity) {
+        int capacity;
+        modCount ++;
+        if ((elementNode == null)) {
+            capacity = 10;
+        } else {
+            capacity = minCapacity;
+        }
+        if (capacity > elementNode.length) {
+
+            Object[] newElement = new Object[capacity + capacity >> 1];
+            System.arraycopy(elementNode, 0, newElement, 0, elementNode.length);
+            elementNode = newElement;
+        }
+    }
 }
