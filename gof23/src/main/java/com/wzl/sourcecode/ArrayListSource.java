@@ -42,6 +42,9 @@ public class ArrayListSource<E> {
     private void grow(int minCapacity) {
         int oldCapacity = elementData.length;
         int newCapacity = oldCapacity + oldCapacity >> 1;
+        if (newCapacity - minCapacity < 0) {
+            newCapacity = minCapacity;
+        }
         Object[] obj = new Object[newCapacity];
         System.arraycopy(elementData, 0, obj, 0, elementData.length);
         elementData = obj;

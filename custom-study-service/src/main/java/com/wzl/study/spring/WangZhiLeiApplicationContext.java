@@ -46,7 +46,6 @@ public class WangZhiLeiApplicationContext {
                 singletonObjects.put(beanName, bean);
             } else {
                 Map map = new HashMap<>();
-                map.put()
             }
         }
     }
