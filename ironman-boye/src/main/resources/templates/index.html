@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html  xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<h1>欧洲跳蚤计价</h1>
+
+<h2 th:text="${goods.price}">实际售卖价格：</h2>
+
+<form action="#" method="post" th:action="@{/goods/price}" th:object="${goods}">
+
+    欧元货款成本:
+    <input type="text" th:field="${goods.cost}"><br><br>
+
+    是否易碎品:
+    <!--    <input type="text" th:field="*{fleaFlag}"><br><br>-->
+    <input id="fragile-yes" name="fragile" type="radio" value="1" required="required"/>
+    <label for="fleaFlag-yes">是</label>
+    <input id="fragile-no" name="fragile" type="radio" value="0"/>
+    <label for="fleaFlag-no">否</label>
+    <br>
+
+    <b><p th:color="red">非易碎品 -> 尺寸:</p></b>
+    <input id="little" name="longestSize" type="radio" value="1"/>
+    <label for="little">小件 15cm以内</label>
+    <br>
+    <input id="middle" name="longestSize" type="radio" value="2"/>
+    <label for="middle">中件 15-50cm</label>
+    <br>
+    <input id="big" name="longestSize" type="radio" value="3"/>
+    <label for="big">大件 51-90cm</label>
+    <br>
+    <input id="max" name="longestSize" type="radio" value="4"/>
+    <label for="max">超大件大于90cm不含邮</label><br><br>
+
+    <b>易碎品 -> 尺寸:</b><br>
+    <input id="little1" name="longestSize" type="radio" value="1"/>
+    <label for="little1">小件 15cm以内</label>
+    <br>
+    <input id="middle1" name="longestSize" type="radio" value="2"/>
+    <label for="middle1">中件 15-50cm</label>
+    <br>
+    <input id="big1" name="longestSize" type="radio" value="3"/>
+    <label for="big1">大件 51-70cm</label>
+    <br>
+    <input id="max1" name="longestSize" type="radio" value="4"/>
+    <label for="max1">超大件大于70cm不含邮</label><br><br>
+
+
+    <b>易碎品 -> 分类:</b><br>
+    <input id="sculpture" name="type" type="radio" value="1"/>
+    <label for="sculpture">雕塑</label>
+    <br>
+    <input id="porcelain" name="type" type="radio" value="2"/>
+    <label for="porcelain">瓷器</label >
+    <br>
+    <input id="seat-clock" name="type" type="radio" value="3"/>
+    <label for="seat-clock">座钟</label>
+    <br>
+    <input id="crystal-six" name="type" type="radio" value="4"/>
+    <label for="crystal-six">水晶(6件及以上)</label>
+    <br>
+    <input id="crystal" name="type" type="radio" value="5"/>
+    <label for="crystal">水晶(6件以下)</label>
+
+    <br><br>
+    是否跳蚤:
+    <input id="fleaFlag-yes" name="fleaFlag" type="radio" value="1" required="required"/>
+    <label for="fleaFlag-yes">是</label>
+    <input id="fleaFlag-no" name="fleaFlag" type="radio" value="0"/>
+    <label for="fleaFlag-no">否</label>
+    <br><br>
+
+    <input type="submit" value="计算">&nbsp;&nbsp;&nbsp;
+    <a th:href="@{/goods/index}"> 刷新重新计算</a>
+
+</form>
+
+</body>
+</html>
+
+

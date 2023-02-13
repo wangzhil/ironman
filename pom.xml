@@ -35,6 +35,7 @@
         <module>custom-study-service</module>
         <module>consumer-mq-api</module>
 		<module>broker-mq-service</module>
+		<module>ironman-boye</module>
 	</modules>
 
 	<dependencyManagement>
